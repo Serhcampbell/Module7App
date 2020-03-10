@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.module7app.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_fragmentAlpha"
+            app:destination="@id/fragmentAlpha" />
+        <action
+            android:id="@+id/action_mainFragment_to_fragmentBeta"
+            app:destination="@id/fragmentBeta" />
+        <action
+            android:id="@+id/action_mainFragment_to_fragmentCharlie"
+            app:destination="@id/fragmentCharlie" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAlpha"
+        android:name="com.example.module7app.FragmentAlpha"
+        android:label="fragment_fragment_alpha"
+        tools:layout="@layout/fragment_fragment_alpha" >
+        <argument
+            android:name="imgRes"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentBeta"
+        android:name="com.example.module7app.FragmentBeta"
+        android:label="fragment_fragment_beta"
+        tools:layout="@layout/fragment_fragment_beta" >
+        <argument
+            android:name="imgRes"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCharlie"
+        android:name="com.example.module7app.FragmentCharlie"
+        android:label="fragment_fragment_charlie"
+        tools:layout="@layout/fragment_fragment_charlie" >
+        <argument
+            android:name="imgRes"
+            app:argType="integer" />
+    </fragment>
+</navigation>

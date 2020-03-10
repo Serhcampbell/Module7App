@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnFragA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="44dp"
+            android:text="@string/go_to_fragment_a"
+            app:layout_constraintBottom_toTopOf="@+id/btnFragB"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageA"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnFragB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="45dp"
+            android:text="@string/go_to_fragment_b"
+            app:layout_constraintBottom_toTopOf="@+id/btnFragC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageB"
+            app:layout_constraintTop_toBottomOf="@+id/btnFragA" />
+
+        <Button
+            android:id="@+id/btnFragC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="44dp"
+            android:text="@string/go_to_fragment_c"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageC"
+            app:layout_constraintTop_toBottomOf="@+id/btnFragB" />
+
+        <ImageView
+            android:id="@+id/imageA"
+            android:layout_width="0dp"
+            android:layout_height="156dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="26dp"
+
+            android:contentDescription="@string/mainimga"
+            android:src="@drawable/letter_a"
+            app:layout_constraintBottom_toTopOf="@+id/imageB"
+            app:layout_constraintEnd_toStartOf="@+id/btnFragA"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageB"
+            android:layout_width="0dp"
+            android:layout_height="157dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="27dp"
+
+            android:contentDescription="@string/mainimgb"
+            android:src="@drawable/letter_b"
+            app:layout_constraintBottom_toTopOf="@+id/imageC"
+            app:layout_constraintEnd_toStartOf="@+id/btnFragB"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageA" />
+
+        <ImageView
+            android:id="@+id/imageC"
+            android:layout_width="0dp"
+            android:layout_height="159dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="27dp"
+
+            android:contentDescription="@string/mainimgc"
+            android:src="@drawable/letter_c"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnFragC"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageB" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
