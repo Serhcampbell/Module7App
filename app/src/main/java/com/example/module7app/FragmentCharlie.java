@@ -34,14 +34,14 @@ public class FragmentCharlie extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-/*
+
         if(getArguments() != null){
             FragmentCharlieArgs args = FragmentCharlieArgs.fromBundle(getArguments());
             int imageRes = args.getImgRes();
             ImageView iv = view.findViewById(R.id.imgFragC);
             iv.setImageResource(imageRes);
 
-        }*/
+        }
     }
 
 }

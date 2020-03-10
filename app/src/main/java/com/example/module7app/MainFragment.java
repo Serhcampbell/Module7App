@@ -23,6 +23,7 @@ import android.widget.TextView;
  */
 public class MainFragment extends Fragment {
 
+    private int id1,id2,id3;
 
     public MainFragment() {
         // Required empty public constructor
@@ -32,6 +33,28 @@ public class MainFragment extends Fragment {
         return (Integer) iv.getTag();
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if(savedInstanceState == null){
+            id1 = 0;
+            id2 = 0;
+            id3 = 0;
+        }
+        else{
+            id1 = savedInstanceState.getInt("imageARes", 0);
+            id2 = savedInstanceState.getInt("imageBRes", 0);
+            id3 = savedInstanceState.getInt("imageCRes", 0);
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("imageARes", id1);
+        outState.putInt("imageBRes", id2);
+        outState.putInt("ImageCRes", id3);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -56,9 +79,9 @@ public class MainFragment extends Fragment {
                 MainFragmentDirections.ActionMainFragmentToFragmentAlpha action = MainFragmentDirections.actionMainFragmentToFragmentAlpha(imageA_id);
                 ImageView image1 = getView().findViewById(R.id.imageA);
                 image1.setTag(R.drawable.letter_a);
-                int id1 = getDrawableId(image1);
+                id1 = getDrawableId(image1);
                 action.setImgRes(id1);
-                navController.navigate(R.id.action_mainFragment_to_fragmentAlpha);
+                navController.navigate(action);
             }
         });
         Button btnB = view.findViewById(R.id.btnFragB);
@@ -70,9 +93,9 @@ public class MainFragment extends Fragment {
                 MainFragmentDirections.ActionMainFragmentToFragmentBeta action = MainFragmentDirections.actionMainFragmentToFragmentBeta(imageB_id);
                 ImageView image2 = getView().findViewById(R.id.imageB);
                 image2.setTag(R.drawable.letter_b);
-                int id2 = getDrawableId(image2);
+                id2 = getDrawableId(image2);
                 action.setImgRes(id2);
-                navController.navigate(R.id.action_mainFragment_to_fragmentBeta);
+                navController.navigate(action);
             }
         });
         Button btnC = view.findViewById(R.id.btnFragC);
@@ -84,9 +107,9 @@ public class MainFragment extends Fragment {
                 MainFragmentDirections.ActionMainFragmentToFragmentCharlie action = MainFragmentDirections.actionMainFragmentToFragmentCharlie(imageC_id);
                 ImageView image3 = getView().findViewById(R.id.imageC);
                 image3.setTag(R.drawable.letter_c);
-                int id3 = getDrawableId(image3);
+                id3 = getDrawableId(image3);
                 action.setImgRes(id3);
-                navController.navigate(R.id.action_mainFragment_to_fragmentCharlie);
+                navController.navigate(action);
             }
         });
     }
